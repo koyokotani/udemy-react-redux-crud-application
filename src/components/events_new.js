@@ -28,14 +28,14 @@ class EventsNew extends Component {
   }
 
   render() {
-    const { handleSubmit, pristin, submitting } = this.props
+    const { handleSubmit, pristin, submitting, invalid } = this.props
 
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <div><Field label="Title" name="title" type="text" component={this.renderField} /></div>
         <div><Field label="Body" name="body" type="text" component={this.renderField} /></div>
         <div>
-          <input type="submit" value="submit" disabled={pristin || submitting} />
+          <input type="submit" value="submit" disabled={pristin || submitting || invalid} />
           <Link to="/">Cancel</Link>
         </div>
       </form>
